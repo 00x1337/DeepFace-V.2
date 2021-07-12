@@ -16,21 +16,20 @@ txtfiles = []
 #     """
         
 #         )
-
-for file in glob.glob("g\\*.*"):
+for file in glob.glob("Photos\\*.*"):
     try:
 
-        r = file.replace("g\\" ,"")
+        r = file.replace("Photos\\" ,"")
         txtfiles.append(r)
-        for file1 in glob.glob("g\\*.*"):
-            r1 = file1.replace("g\\" ,"")
+        for file1 in glob.glob("Photos\\*.*"):
+            r1 = file1.replace("Photos\\" ,"")
             if not file == file1:
             
                 result  = DeepFace.verify(file,file1)
                 rrw = result["verified"]
-                rrw1 = result["distance"]
+                rrw1 = result["distance"] 
                 if rrw == True or 0.4 >= rrw1:
                     if not r1 in txtfiles:
-                        print(f" img [1] : {r}\n img [2] : {r1}\n verified : {rrw}\n distance : {rrw1}\n\n\n")
+                        print(f" img [1] : {r}\n img [2] : {r1}\n verified : True\n distance : {rrw1}\n\n\n")
     except:
         pass
