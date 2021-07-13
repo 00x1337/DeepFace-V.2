@@ -100,6 +100,23 @@ class filter():
                     all.append(f"""
                     IMG : {file}
                     --------
+                    MODE : {result[mode_filter[int(mode_selected)]]}
+                    
+                    """)
+                    numr +=1
+
+                else:
+                    numg +=1
+                try:
+                    os.system("cls")
+
+                except:
+                    os.system("clear")
+                print(f"IMG : {str(numr)} | Not :{str(numg)} | MODE : statas")
+
+                print("\n\n".join(all))
+                
+        except:
             try:
                     os.system("cls")
             except:
